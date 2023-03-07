@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Muhim malumotlarni env dan olib olish
+// Muhim malumotlarni env dan olish
 const port = process.env.PORT || 5001;
 const url = process.env.MONGO_URL;
 
