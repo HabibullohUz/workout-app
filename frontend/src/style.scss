@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.wrapper {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.workouts {
+    transform-style: preserve-3d;
+
+    .box {
+        position: relative;
+       
+        height: 300px;
+        margin: 20px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        cursor: pointer;
+        
+        &:hover {
+            .body{
+                transform: rotateY(180deg);
+            }
+        }
+        
+        .body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: 0.9s ease;
+            
+            .imgContainer{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
+
+            .content{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #333;
+                backface-visibility: hidden;
+                transform-style: preserve-3d;
+                transform: rotateY(180deg);
+                border-radius: 10px;
+
+                div{
+                    transform-style: preserve-3d;
+                    padding: 20px;
+                    background: linear-gradient(45deg, #FE0061,#FFEB3B);
+                    transform: translateZ(100px);
+                    border-radius: 5px;
+
+                    h3{
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form-box {
+    form {
+        input {
+            font-size: 13px;
+            color: #c4c4c4;
+            width: 100%;
+            height: 46px;
+            border: 1px solid #363636;
+            padding-left: 20px;
+            padding-right: 5px;
+            background: transparent;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            font-size: 14px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 700;
+            width: 100%;
+            border: none;
+            padding: 14px 0 12px;
+            background: #f36100;
+        }
+    }
+}
+
+.banner-area {
+    background: linear-gradient(0deg, rgba(23, 16, 16, 0.7), rgba(23, 16, 16, 0.7)), url("https://preview.colorlib.com/theme/gym/img/header-bg.jpg")  center;
+    background-size: cover;
+    min-height: 100vh;
+
+    button {
+        cursor: pointer;
+        transition: 0.5s ease-out;
+
+        &:hover {
+            background-color: #1f1d1d!important;
+        }
+    }
+
+    .row {
+        height: 100vh;
+    }
+
+    .banner-content {
+        text-align: center;
+
+        h1 {
+            color: #fff;
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 1em;
+            margin-top: 20px;
+        }
+    }
+}
