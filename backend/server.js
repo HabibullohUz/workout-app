@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Muhim malumotlarni env dan olish
+// Muhim malumotlarni env dan olib olish
 const port = process.env.PORT || 5001;
 const url = process.env.MONGO_URL;
 
@@ -27,9 +27,9 @@ app.use('/users', users)
 mongoose
   .connect(url)
   .then(() => {
-    app.listen(port, () => {
-      console.log(`Server running on port ${port} and successfully connected to database`);
-    });
+      app.listen(port, () => {
+        console.log(`Server running on port ${port} and successfully connected to database`);
+      });
   })
   .catch((err) => {
     console.log(err);

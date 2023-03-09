@@ -16,10 +16,11 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    axios.post("http://localhost:5001/user/login", user)
+    axios.post("http://localhost:5001/users/login", user)
       .then((res) => {
         console.log(res.data);
         dispatch(login(res.data))
+        navigate('/')
       })
       .catch((err) => console.log(err))
   }

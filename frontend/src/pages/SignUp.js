@@ -13,7 +13,7 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    axios.post('http://localhost:5001/user/signup', user)
+    axios.post('http://localhost:5001/users/signup', user)
       .then(() => {
         console.log(user);
         setUser({})

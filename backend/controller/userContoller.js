@@ -10,15 +10,17 @@ const getAllUsers = async (req, res) => {
 };
 
 const signup = async (req, res) => {
+  console.log(req.body);
   try {
     const newUser = await User.signup(req);
-    res.status(201).json(newUser);
+    res.status(200).json(newUser);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 };
 
 const login = async (req, res) => {
+  console.log(req.body);
   try {
     const user = await User.login(req);
     res.status(201).json(user);

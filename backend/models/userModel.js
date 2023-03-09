@@ -4,14 +4,6 @@ const validator = require("validator");
 
 const userSchema = new mongoose.Schema(
   {
-    firstname: {
-      type: String,
-      require: true,
-    },
-    lastname: {
-      type: String,
-      require: true,
-    },
     username: {
       type: String,
       require: true,
@@ -24,29 +16,12 @@ const userSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    phone: {
-      type: Number,
-      require: true,
-    },
   },
   { timestamps: true }
 );
 
 userSchema.statics.signup = async function (req) {
   const { email, password } = req.body;
-
-  //   Email already exists
-  //   const isExist = await this.findOne({ email });
-  //   if (isExist) {
-  //     throw Error("Bunday email mavjud");
-  //   }
-
-  // Yangi user yaratish
-  //   const newUser = await this.create({
-  //     ...req.body,
-  //   });
-
-  //   console.log(newUser);
 
   //   Email va passwordlar talabga javob beradimi tekshirish
   if (!validator.isEmail(email)) {
@@ -93,4 +68,4 @@ userSchema.statics.login = async function (req) {
   return user;
 };
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("user", userSchema);

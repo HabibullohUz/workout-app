@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 import Card from "../components/Card";
 import HomeBanner from "../components/HomeBanner";
 import { setUserWorkouts } from "../redux/reducers/workoutSlice";
@@ -27,13 +28,6 @@ function Home() {
             {workouts.map((workout) => {
               return <Card workout={workout} />;
             })}
-            {/* <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card /> */}
           </div>
         </div>
       ) : (
@@ -45,8 +39,8 @@ function Home() {
 
 export default Home;
 
-{
-  /* <div className="container wrapper mx-auto pb-5">
+/* {
+  <div className="container wrapper mx-auto pb-5">
       <h1 className="text-center">Workouts</h1>
       <div className="row workouts mt-4">
         <Card />
@@ -57,5 +51,6 @@ export default Home;
         <Card />
         <Card />
       </div>
-    </div> */
+    </div>
 }
+ */

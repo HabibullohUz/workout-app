@@ -1,25 +1,28 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router'
 
 function AddWorkout() {
-    const user = useSelector((state) => state.user.currentUser)
-    const [workout, setWorkout] = useState({userId: user._id})
+  const user = useSelector((state) => state.user.currentUser)
+  const [workout, setWorkout] = useState({ userId: user._id })
+  const navigate = useNavigate()
 
-    const handleChange = (e) => {
-        setWorkout({...workout, [e.target.name]: e.target.value})
-    }
+  const handleChange = (e) => {
+    setWorkout({ ...workout, [e.target.name]: e.target.value })
+  }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(workout);
-    
-        axios.post('http://localhost:5001/workouts/add', workout)
-          .then(() => {
-            setWorkout({userId: user._id})
-          })
-          .catch((err) => console.log(err))
-      }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(workout);
+
+    axios.post('http://localhost:5001/workouts/add', workout)
+      .then(() => {
+        setWorkout({ userId: user._id })
+        navigate('/')
+      })
+      .catch((err) => console.log(err))
+  }
 
 
   return (
